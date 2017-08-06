@@ -1,0 +1,34 @@
+scalar Object
+scalar DateTime
+scalar URI
+
+interface FirstInterface {
+  firstInterfaceValue : String
+}
+
+interface SecondInterface {
+	secondInterfaceValue : String
+}
+
+type FirstImpl implements FirstInterface {
+    firstInterfaceValue : String
+    firstImplId: ID!
+    firstImplValue: String
+}
+
+
+type SecondImpl implements SecondInterface {
+    secondImplId: ID!
+    secondImplValue: String
+    secondInterfaceValue : String
+}
+
+
+type Query {
+  getFirstImplValues : [FirstImpl]
+  getSecondImplValues : [SecondImpl]
+}
+
+schema {
+    query: Query
+}
