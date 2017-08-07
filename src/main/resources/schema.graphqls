@@ -16,13 +16,12 @@ type FirstImpl implements FirstInterface {
     firstImplValue: String
 }
 
-
-type SecondImpl implements SecondInterface {
+type SecondImpl implements SecondInterface, FirstInterface {
     secondImplId: ID!
     secondImplValue: String
     secondInterfaceValue : String
+    firstInterfaceValue : String
 }
-
 
 type Query {
   getFirstImplValues : [FirstImpl]
@@ -31,4 +30,11 @@ type Query {
 
 schema {
     query: Query
+    mutation : Mutation
+}
+
+type Mutation {
+	putValInFirst(firstInterfaceValue : String, firstImplId : String, firstImplValue : String) : FirstImpl
+	putValInSecondImpl(secondInterfaceValue : String, secondImplId : String, secondImplValue : String, firstInterfaceValue : String) : SecondImpl
+  
 }
