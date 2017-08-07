@@ -22,7 +22,7 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
     	
         return SchemaParser.newParser()
                 .file("schema.graphqls")
-                .resolvers(new Query(firstRepository, secondRepository))
+                .resolvers(new Query(firstRepository, secondRepository), new Mutation(firstRepository, secondRepository))
                 .build()
                 .makeExecutableSchema();
     }
