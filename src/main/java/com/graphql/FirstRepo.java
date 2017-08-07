@@ -18,5 +18,9 @@ public class FirstRepo {
 	    public List<FirstImpl> getFirstImplValues() {
 	        return firstImplValLst;
 	    }
+	
+	    public void saveFirstImpl(FirstImpl firstImpl) {
+	    	firstImplValLst.add(firstImpl);
+	    }
 	    
 }
