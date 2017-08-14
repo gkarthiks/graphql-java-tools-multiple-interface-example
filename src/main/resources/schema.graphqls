@@ -23,6 +23,13 @@ type SecondImpl implements SecondInterface, FirstInterface {
     firstInterfaceValue : String
 }
 
+type ThirdImpl implements SecondInterface, FirstInterface {
+    secondImplId: ID!
+    secondImplValue: String
+    secondInterfaceValue : String
+    firstInterfaceValue : String
+}
+
 type Query {
   getFirstImplValues : [FirstImpl]
   getSecondImplValues : [SecondImpl]
